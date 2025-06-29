@@ -359,7 +359,7 @@ const translations = {
 
 const App = () => {
   const [language, setLanguage] = useState('en')
-  const [isDarkMode, setIsDarkMode] = useState(true) // Default to dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false) // Default to light mode
   const t = translations[language]
 
   const fadeInUp = {
