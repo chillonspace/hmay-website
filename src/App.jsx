@@ -378,7 +378,7 @@ const App = () => {
 
   const WhatsAppButton = ({ className = "", children, large = false }) => (
     <a
-      href="https://wa.me/60123456789"
+      href="https://wa.me/60129319468"
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white ${large ? 'px-8 py-4 text-lg' : 'px-6 py-3'} rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold ${className}`}
@@ -914,16 +914,11 @@ const App = () => {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-8 mb-12">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="text-center">
                 <Phone className="w-8 h-8 mx-auto mb-2 text-gray-400" />
                 <p className="font-semibold text-white">{t.contact.whatsappCall}</p>
-                <p className="text-gray-300">+6012 3456 789</p>
-              </div>
-              <div className="text-center">
-                <Mail className="w-8 h-8 mx-auto mb-2 text-gray-400" />
-                <p className="font-semibold text-white">{t.contact.email}</p>
-                <p className="text-gray-300">info@hmay.com.my</p>
+                <p className="text-gray-300">+60 12-931 9468</p>
               </div>
               <div className="text-center">
                 <Calendar className="w-8 h-8 mx-auto mb-2 text-gray-400" />
@@ -933,13 +928,9 @@ const App = () => {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mb-8">
-              <WhatsAppButton large className="bg-green-500 hover:bg-green-600 mr-4">
+              <WhatsAppButton large className="bg-green-500 hover:bg-green-600">
                 {t.contact.whatsappDemo}
               </WhatsAppButton>
-              <button className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl font-semibold border border-gray-600">
-                <Mail size={24} />
-                {t.contact.emailInquiry}
-              </button>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="text-gray-400 text-sm">

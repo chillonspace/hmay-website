@@ -50,15 +50,9 @@ npm run build
 ## Customization
 
 ### WhatsApp Number
-Update the WhatsApp number in the `WhatsAppButton` component in `src/App.jsx`:
+The WhatsApp number is configured in the `WhatsAppButton` component in `src/App.jsx`:
 ```javascript
-href="https://wa.me/60123456789" // Replace with actual number
-```
-
-### Email Address
-Update the email address in the Final CTA section:
-```javascript
-<span>hello@tbdynamic.com.my</span> // Replace with actual email
+href="https://wa.me/60129319468" // Current: +60 12-931 9468
 ```
 
 ### Images
