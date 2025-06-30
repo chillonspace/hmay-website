@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import ImageSlider from './components/ImageSlider.jsx'
-// Hero background image is now in public folder
 import {
   MessageCircle,
   Download,
@@ -32,8 +30,7 @@ import {
   Star,
   ArrowRight,
   PlayCircle,
-  Languages,
-  Sun
+  Languages
 } from 'lucide-react'
 import HmayLogo from './Hmay.png'
 
@@ -361,48 +358,7 @@ const translations = {
 
 const App = () => {
   const [language, setLanguage] = useState('en')
-  const isDarkMode = false // Always light mode
   const t = translations[language]
-
-  // Slider images data - Your uploaded images (no text overlays)
-  const sliderImages = [
-    {
-      src: '/src/assets/slider-images/hmayslider1.jpeg',
-      alt: 'HMAY Interactive Panel Solution 1'
-    },
-    {
-      src: '/src/assets/slider-images/hmayslider2.jpeg',
-      alt: 'HMAY Interactive Panel Solution 2'
-    },
-    {
-      src: '/src/assets/slider-images/hmayslider3.jpeg',
-      alt: 'HMAY Interactive Panel Solution 3'
-    },
-    {
-      src: '/src/assets/slider-images/hmayslider4.jpeg',
-      alt: 'HMAY Interactive Panel Solution 4'
-    },
-    {
-      src: '/src/assets/slider-images/hmayslider5.jpeg',
-      alt: 'HMAY Interactive Panel Solution 5'
-    },
-    {
-      src: '/src/assets/slider-images/hmayslider6.jpeg',
-      alt: 'HMAY Interactive Panel Solution 6'
-    },
-    {
-      src: '/src/assets/slider-images/hmayslider7.jpeg',
-      alt: 'HMAY Interactive Panel Solution 7'
-    },
-    {
-      src: '/src/assets/slider-images/hmayslider8.jpeg',
-      alt: 'HMAY Interactive Panel Solution 8'
-    },
-    {
-      src: '/src/assets/slider-images/hmayslider9.jpeg',
-      alt: 'HMAY Interactive Panel Solution 9'
-    }
-  ]
 
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -478,26 +434,19 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <section 
-        className="relative overflow-hidden bg-white"
-        style={{
-          width: '100vw',
-        }}
-      >
-        <img 
-          src="/images/hero-bg.png" 
-          alt="Hero Background" 
-          className="w-full h-auto object-cover"
-          style={{ display: 'block' }}
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <motion.div
-              initial="initial"
-              animate="animate"
-              variants={staggerContainer}
-              className="text-center w-full"
-            >
+      <section className="py-12 sm:py-20 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <div className={`absolute inset-0 ${
+          isDarkMode 
+            ? 'bg-gradient-to-br from-[#007acc]/5 via-transparent to-[#4fc3f7]/3' 
+            : 'bg-gradient-to-br from-blue-100/30 via-transparent to-indigo-100/30'
+        }`}></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={staggerContainer}
+            className="text-center"
+          >
             <motion.div variants={fadeInUp} className="mb-8 relative">
               {/* Static decoration - no animation */}
               <div className="hidden sm:block absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-10 blur-xl"></div>
@@ -510,10 +459,18 @@ const App = () => {
               }`}>
                 ✨ {t.hero.distributor}
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight text-white drop-shadow-2xl">
-                {t.hero.title}
+              <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 transition-colors duration-300 leading-tight tracking-tight ${
+                isDarkMode 
+                  ? 'text-[#cccccc]' 
+                  : 'text-gray-900'
+              }`}>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                  {t.hero.title}
+                </span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 text-white/95 drop-shadow-xl">
+              <p className={`text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto transition-colors duration-300 leading-relaxed px-4 sm:px-0 ${
+                isDarkMode ? 'text-[#888888]' : 'text-gray-600'
+              }`}>
                 {t.hero.subtitle}
               </p>
             </motion.div>
@@ -522,59 +479,105 @@ const App = () => {
               <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-3 sm:gap-4 text-sm px-4 sm:px-0">
                 <motion.div 
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 bg-white border border-gray-200 hover:shadow-xl">
-                  <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4 text-black" />
-                  <span className="font-medium text-xs sm:text-sm text-black">{t.hero.features.display}</span>
+                  className={`flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-r from-[#2d2d2d]/80 to-[#3e3e3e]/80 border border-[#404040] hover:border-[#007acc]/50' 
+                      : 'bg-gradient-to-r from-white/90 to-blue-50/90 border border-blue-200 shadow-blue-100 hover:shadow-blue-200'
+                  }`}>
+                  <CheckCircle className={`w-3 sm:w-4 h-3 sm:h-4 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-blue-600'}`} />
+                  <span className={`font-medium text-xs sm:text-sm ${isDarkMode ? 'text-[#cccccc]' : 'text-blue-800'}`}>{t.hero.features.display}</span>
                 </motion.div>
                 <motion.div 
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 bg-white border border-gray-200 hover:shadow-xl">
-                  <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4 text-black" />
-                  <span className="font-medium text-xs sm:text-sm text-black">{t.hero.features.touch}</span>
+                  className={`flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-r from-[#2d2d2d]/80 to-[#3e3e3e]/80 border border-[#404040] hover:border-[#007acc]/50' 
+                      : 'bg-gradient-to-r from-white/90 to-emerald-50/90 border border-emerald-200 shadow-emerald-100 hover:shadow-emerald-200'
+                  }`}>
+                  <CheckCircle className={`w-3 sm:w-4 h-3 sm:h-4 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-emerald-600'}`} />
+                  <span className={`font-medium text-xs sm:text-sm ${isDarkMode ? 'text-[#cccccc]' : 'text-emerald-800'}`}>{t.hero.features.touch}</span>
                 </motion.div>
                 <motion.div 
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 bg-white border border-gray-200 hover:shadow-xl">
-                  <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4 text-black" />
-                  <span className="font-medium text-xs sm:text-sm text-black">{t.hero.features.os}</span>
+                  className={`flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-r from-[#2d2d2d]/80 to-[#3e3e3e]/80 border border-[#404040] hover:border-[#007acc]/50' 
+                      : 'bg-gradient-to-r from-white/90 to-purple-50/90 border border-purple-200 shadow-purple-100 hover:shadow-purple-200'
+                  }`}>
+                  <CheckCircle className={`w-3 sm:w-4 h-3 sm:h-4 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-purple-600'}`} />
+                  <span className={`font-medium text-xs sm:text-sm ${isDarkMode ? 'text-[#cccccc]' : 'text-purple-800'}`}>{t.hero.features.os}</span>
                 </motion.div>
                 <motion.div 
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 bg-white border border-gray-200 hover:shadow-xl">
-                  <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4 text-black" />
-                  <span className="font-medium text-xs sm:text-sm text-black">{t.hero.features.brand}</span>
+                  className={`flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-r from-[#2d2d2d]/80 to-[#3e3e3e]/80 border border-[#404040] hover:border-[#007acc]/50' 
+                      : 'bg-gradient-to-r from-white/90 to-amber-50/90 border border-amber-200 shadow-amber-100 hover:shadow-amber-200'
+                  }`}>
+                  <CheckCircle className={`w-3 sm:w-4 h-3 sm:h-4 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-amber-600'}`} />
+                  <span className={`font-medium text-xs sm:text-sm ${isDarkMode ? 'text-[#cccccc]' : 'text-amber-800'}`}>{t.hero.features.brand}</span>
                 </motion.div>
               </div>
             </motion.div>
+
+            <motion.div variants={fadeInUp} className="flex flex-col gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 px-4 sm:px-0">
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <WhatsAppButton className="w-full justify-center py-4 text-lg font-bold rounded-xl shadow-xl">
+                  {t.hero.whatsappDemo}
+                </WhatsAppButton>
+              </motion.div>
+              <motion.button 
+                whileHover={{ scale: 1.02, y: -2 }} 
+                whileTap={{ scale: 0.98 }}
+                className={`w-full justify-center inline-flex items-center gap-3 px-8 py-4 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl font-semibold backdrop-blur-sm group ${
+                  isDarkMode 
+                    ? 'bg-gradient-to-r from-[#2d2d2d]/80 to-[#3e3e3e]/80 hover:from-[#3e3e3e]/90 hover:to-[#4e4e4e]/90 text-[#cccccc] border border-[#404040] hover:border-[#007acc]/50' 
+                    : 'bg-gradient-to-r from-white/90 to-blue-50/90 hover:from-blue-50/95 hover:to-blue-100/95 text-blue-700 border border-blue-200/50 shadow-blue-100 hover:shadow-blue-200'
+                }`}>
+                <Download size={20} className="group-hover:rotate-12 transition-transform duration-300" />
+                {t.hero.downloadBrochure}
+              </motion.button>
+            </motion.div>
+
+            {/* Hero Product Showcase */}
+            <motion.div variants={fadeInUp} className="relative">
+              <div className="relative max-w-4xl mx-auto">
+                <div className={`rounded-2xl shadow-2xl aspect-video flex items-center justify-center backdrop-blur-sm transition-colors duration-300 ${
+                  isDarkMode 
+                    ? 'bg-[#2d2d2d] border border-[#404040]' 
+                    : 'bg-gradient-to-br from-blue-50 to-white border border-blue-200 shadow-blue-100'
+                }`}>
+                  <div className="text-center">
+                    <Monitor size={80} className={`mx-auto mb-4 opacity-80 ${isDarkMode ? 'text-[#cccccc]' : 'text-blue-600'}`} />
+                    <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-[#cccccc]' : 'text-blue-900'}`}>{t.hero.productTitle}</h3>
+                    <p className={isDarkMode ? 'text-[#888888]' : 'text-blue-700'}>{t.hero.productSubtitle}</p>
+                  </div>
+                </div>
+                <div className={`absolute -bottom-6 -right-6 text-white px-4 py-2 rounded-lg shadow-lg ${
+                  isDarkMode 
+                    ? 'bg-gradient-to-r from-[#007acc] to-[#4fc3f7]' 
+                    : 'bg-gradient-to-r from-blue-600 to-blue-500'
+                }`}>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                    <span className="text-sm font-semibold">{t.hero.liveDemo}</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
-          </div>
         </div>
       </section>
 
-      {/* Image Slider Section */}
-      {sliderImages && sliderImages.length > 0 && (
-        <section className="py-8 sm:py-12 relative bg-gray-50">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
-                HMAY Interactive Flat Panel
-              </h2>
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <ImageSlider images={sliderImages} />
-            </motion.div>
-          </motion.div>
-        </section>
-      )}
-
       {/* Interactive Flat Panel Benefits */}
-      <section id="benefits" className="py-12 sm:py-20 relative bg-gray-50">
-        <div className="absolute inset-0 bg-white/50"></div>
+      <section id="benefits" className={`py-12 sm:py-20 relative transition-colors duration-300 ${
+        isDarkMode ? 'bg-[#1e1e1e]' : 'bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50'
+      }`}>
+        <div className={`absolute inset-0 ${
+          isDarkMode 
+            ? 'bg-gradient-to-t from-[#2d2d2d]/10 to-transparent' 
+            : 'bg-gradient-to-t from-blue-100/20 to-transparent'
+        }`}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial="initial"
@@ -583,61 +586,113 @@ const App = () => {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-8 sm:mb-16 px-4 sm:px-0">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-black">
+              <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 transition-colors duration-300 ${
+                isDarkMode ? 'text-[#cccccc]' : 'text-slate-800'
+              }`}>
                 {t.benefits.title}
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600">
+              <p className={`text-lg sm:text-xl transition-colors duration-300 ${
+                isDarkMode ? 'text-[#888888]' : 'text-slate-600'
+              }`}>
                 {t.benefits.subtitle}
               </p>
             </motion.div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
-              <motion.div variants={fadeInUp} className="rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm bg-white hover:shadow-xl border border-gray-200 p-5 sm:p-8">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-100 border border-gray-200">
-                  <Share2 className="w-6 h-6 text-black" />
+              <motion.div variants={fadeInUp} className={`rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-[#2d2d2d] hover:bg-[#3e3e3e] border border-[#404040]' 
+                  : 'bg-white hover:bg-blue-50 border border-blue-200 shadow-blue-100'
+              } p-5 sm:p-8`}>
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 ${
+                  isDarkMode 
+                    ? 'bg-[#007acc]/20 border border-[#007acc]/30' 
+                    : 'bg-blue-100 border border-blue-200'
+                }`}>
+                  <Share2 className={`w-6 h-6 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-blue-600'}`} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-black">{t.benefits.multipleScreen.title}</h3>
-                <p className="text-gray-600">{t.benefits.multipleScreen.desc}</p>
+                <h3 className={`text-xl font-semibold mb-3 ${isDarkMode ? 'text-[#cccccc]' : 'text-slate-800'}`}>{t.benefits.multipleScreen.title}</h3>
+                <p className={isDarkMode ? 'text-[#888888]' : 'text-slate-600'}>{t.benefits.multipleScreen.desc}</p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm bg-white hover:shadow-xl border border-gray-200 p-5 sm:p-8">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-100 border border-gray-200">
-                  <Wifi className="w-6 h-6 text-black" />
+              <motion.div variants={fadeInUp} className={`rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-[#2d2d2d] hover:bg-[#3e3e3e] border border-[#404040]' 
+                  : 'bg-white hover:bg-emerald-50 border border-emerald-200 shadow-emerald-100'
+              } p-5 sm:p-8`}>
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 ${
+                  isDarkMode 
+                    ? 'bg-[#007acc]/20 border border-[#007acc]/30' 
+                    : 'bg-emerald-100 border border-emerald-200'
+                }`}>
+                  <Wifi className={`w-6 h-6 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-emerald-600'}`} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-black">{t.benefits.wireless.title}</h3>
-                <p className="text-gray-600">{t.benefits.wireless.desc}</p>
+                <h3 className={`text-xl font-semibold mb-3 ${isDarkMode ? 'text-[#cccccc]' : 'text-slate-800'}`}>{t.benefits.wireless.title}</h3>
+                <p className={isDarkMode ? 'text-[#888888]' : 'text-slate-600'}>{t.benefits.wireless.desc}</p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm bg-white hover:shadow-xl border border-gray-200 p-5 sm:p-8">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-100 border border-gray-200">
-                  <PenTool className="w-6 h-6 text-black" />
+              <motion.div variants={fadeInUp} className={`rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-[#2d2d2d] hover:bg-[#3e3e3e] border border-[#404040]' 
+                  : 'bg-white hover:bg-purple-50 border border-purple-200 shadow-purple-100'
+              } p-5 sm:p-8`}>
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 ${
+                  isDarkMode 
+                    ? 'bg-[#007acc]/20 border border-[#007acc]/30' 
+                    : 'bg-purple-100 border border-purple-200'
+                }`}>
+                  <PenTool className={`w-6 h-6 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-purple-600'}`} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-black">{t.benefits.whiteboard.title}</h3>
-                <p className="text-gray-600">{t.benefits.whiteboard.desc}</p>
+                <h3 className={`text-xl font-semibold mb-3 ${isDarkMode ? 'text-[#cccccc]' : 'text-slate-800'}`}>{t.benefits.whiteboard.title}</h3>
+                <p className={isDarkMode ? 'text-[#888888]' : 'text-slate-600'}>{t.benefits.whiteboard.desc}</p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm bg-white hover:shadow-xl border border-gray-200 p-5 sm:p-8">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-100 border border-gray-200">
-                  <QrCode className="w-6 h-6 text-black" />
+              <motion.div variants={fadeInUp} className={`rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-[#2d2d2d] hover:bg-[#3e3e3e] border border-[#404040]' 
+                  : 'bg-white hover:bg-amber-50 border border-amber-200 shadow-amber-100'
+              } p-5 sm:p-8`}>
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 ${
+                  isDarkMode 
+                    ? 'bg-[#007acc]/20 border border-[#007acc]/30' 
+                    : 'bg-amber-100 border border-amber-200'
+                }`}>
+                  <QrCode className={`w-6 h-6 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-amber-600'}`} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-black">{t.benefits.sharing.title}</h3>
-                <p className="text-gray-600">{t.benefits.sharing.desc}</p>
+                <h3 className={`text-xl font-semibold mb-3 ${isDarkMode ? 'text-[#cccccc]' : 'text-slate-800'}`}>{t.benefits.sharing.title}</h3>
+                <p className={isDarkMode ? 'text-[#888888]' : 'text-slate-600'}>{t.benefits.sharing.desc}</p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm bg-white hover:shadow-xl border border-gray-200 p-5 sm:p-8">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-100 border border-gray-200">
-                  <MousePointer className="w-6 h-6 text-black" />
+              <motion.div variants={fadeInUp} className={`rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-[#2d2d2d] hover:bg-[#3e3e3e] border border-[#404040]' 
+                  : 'bg-white hover:bg-rose-50 border border-rose-200 shadow-rose-100'
+              } p-5 sm:p-8`}>
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 ${
+                  isDarkMode 
+                    ? 'bg-[#007acc]/20 border border-[#007acc]/30' 
+                    : 'bg-rose-100 border border-rose-200'
+                }`}>
+                  <MousePointer className={`w-6 h-6 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-rose-600'}`} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-black">{t.benefits.control.title}</h3>
-                <p className="text-gray-600">{t.benefits.control.desc}</p>
+                <h3 className={`text-xl font-semibold mb-3 ${isDarkMode ? 'text-[#cccccc]' : 'text-slate-800'}`}>{t.benefits.control.title}</h3>
+                <p className={isDarkMode ? 'text-[#888888]' : 'text-slate-600'}>{t.benefits.control.desc}</p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm bg-white hover:shadow-xl border border-gray-200 p-5 sm:p-8">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6 bg-gray-100 border border-gray-200">
-                  <Sun className="w-6 h-6 text-black" />
+              <motion.div variants={fadeInUp} className={`rounded-xl transition-all duration-300 shadow-lg backdrop-blur-sm ${
+                isDarkMode 
+                  ? 'bg-[#2d2d2d] hover:bg-[#3e3e3e] border border-[#404040]' 
+                  : 'bg-white hover:bg-yellow-50 border border-yellow-200 shadow-yellow-100'
+              } p-5 sm:p-8`}>
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 ${
+                  isDarkMode 
+                    ? 'bg-[#007acc]/20 border border-[#007acc]/30' 
+                    : 'bg-yellow-100 border border-yellow-200'
+                }`}>
+                  <Sun className={`w-6 h-6 ${isDarkMode ? 'text-[#4fc3f7]' : 'text-yellow-600'}`} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-black">{t.benefits.brightness.title}</h3>
-                <p className="text-gray-600">{t.benefits.brightness.desc}</p>
+                <h3 className={`text-xl font-semibold mb-3 ${isDarkMode ? 'text-[#cccccc]' : 'text-slate-800'}`}>{t.benefits.brightness.title}</h3>
+                <p className={isDarkMode ? 'text-[#888888]' : 'text-slate-600'}>{t.benefits.brightness.desc}</p>
               </motion.div>
             </div>
           </motion.div>
@@ -739,62 +794,38 @@ const App = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <motion.div variants={fadeInUp} className={`rounded-xl p-6 transition-all duration-300 shadow-lg backdrop-blur-sm ${
-                isDarkMode 
-                  ? 'bg-white/5 hover:bg-white/10 border border-white/10' 
-                  : 'bg-white hover:bg-blue-50 border border-blue-200 shadow-blue-100'
-              }`}>
-                <Monitor className={`w-10 h-10 mb-4 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
-                <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>{t.products.interactive.title}</h3>
-                <p className={`text-sm mb-4 ${isDarkMode ? 'text-white/70' : 'text-slate-600'}`}>{t.products.interactive.size}</p>
-                <button className={`text-sm font-medium flex items-center gap-1 transition-colors ${
-                  isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
-                }`}>
+              <motion.div variants={fadeInUp} className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 border border-white/10 shadow-lg backdrop-blur-sm">
+                <Monitor className="w-10 h-10 text-blue-400 mb-4" />
+                <h3 className="font-semibold text-white mb-2">{t.products.interactive.title}</h3>
+                <p className="text-sm text-white/70 mb-4">{t.products.interactive.size}</p>
+                <button className="text-blue-400 text-sm font-medium hover:text-blue-300 flex items-center gap-1 transition-colors">
                   {t.products.viewSpecs} <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className={`rounded-xl p-6 transition-all duration-300 shadow-lg backdrop-blur-sm ${
-                isDarkMode 
-                  ? 'bg-white/5 hover:bg-white/10 border border-white/10' 
-                  : 'bg-white hover:bg-emerald-50 border border-emerald-200 shadow-emerald-100'
-              }`}>
-                <Cpu className={`w-10 h-10 mb-4 ${isDarkMode ? 'text-emerald-400' : 'text-emerald-600'}`} />
-                <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>{t.products.tablet.title}</h3>
-                <p className={`text-sm mb-4 ${isDarkMode ? 'text-white/70' : 'text-slate-600'}`}>{t.products.tablet.desc}</p>
-                <button className={`text-sm font-medium flex items-center gap-1 transition-colors ${
-                  isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-emerald-600 hover:text-emerald-700'
-                }`}>
+              <motion.div variants={fadeInUp} className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 border border-white/10 shadow-lg backdrop-blur-sm">
+                <Cpu className="w-10 h-10 text-emerald-400 mb-4" />
+                <h3 className="font-semibold text-white mb-2">{t.products.tablet.title}</h3>
+                <p className="text-sm text-white/70 mb-4">{t.products.tablet.desc}</p>
+                <button className="text-blue-400 text-sm font-medium hover:text-blue-300 flex items-center gap-1 transition-colors">
                   {t.products.viewSpecs} <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className={`rounded-xl p-6 transition-all duration-300 shadow-lg backdrop-blur-sm ${
-                isDarkMode 
-                  ? 'bg-white/5 hover:bg-white/10 border border-white/10' 
-                  : 'bg-white hover:bg-purple-50 border border-purple-200 shadow-purple-100'
-              }`}>
-                <Wrench className={`w-10 h-10 mb-4 ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`} />
-                <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>{t.products.stands.title}</h3>
-                <p className={`text-sm mb-4 ${isDarkMode ? 'text-white/70' : 'text-slate-600'}`}>{t.products.stands.desc}</p>
-                <button className={`text-sm font-medium flex items-center gap-1 transition-colors ${
-                  isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-purple-600 hover:text-purple-700'
-                }`}>
+              <motion.div variants={fadeInUp} className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 border border-white/10 shadow-lg backdrop-blur-sm">
+                <Wrench className="w-10 h-10 text-purple-400 mb-4" />
+                <h3 className="font-semibold text-white mb-2">{t.products.stands.title}</h3>
+                <p className="text-sm text-white/70 mb-4">{t.products.stands.desc}</p>
+                <button className="text-blue-400 text-sm font-medium hover:text-blue-300 flex items-center gap-1 transition-colors">
                   {t.products.viewSpecs} <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className={`rounded-xl p-6 transition-all duration-300 shadow-lg backdrop-blur-sm ${
-                isDarkMode 
-                  ? 'bg-white/5 hover:bg-white/10 border border-white/10' 
-                  : 'bg-white hover:bg-orange-50 border border-orange-200 shadow-orange-100'
-              }`}>
-                <Share2 className={`w-10 h-10 mb-4 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`} />
-                <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>{t.products.wireless.title}</h3>
-                <p className={`text-sm mb-4 ${isDarkMode ? 'text-white/70' : 'text-slate-600'}`}>{t.products.wireless.desc}</p>
-                <button className={`text-sm font-medium flex items-center gap-1 transition-colors ${
-                  isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-orange-600 hover:text-orange-700'
-                }`}>
+              <motion.div variants={fadeInUp} className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 border border-white/10 shadow-lg backdrop-blur-sm">
+                <Share2 className="w-10 h-10 text-orange-400 mb-4" />
+                <h3 className="font-semibold text-white mb-2">{t.products.wireless.title}</h3>
+                <p className="text-sm text-white/70 mb-4">{t.products.wireless.desc}</p>
+                <button className="text-blue-400 text-sm font-medium hover:text-blue-300 flex items-center gap-1 transition-colors">
                   {t.products.viewSpecs} <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
