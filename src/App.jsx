@@ -51,8 +51,8 @@ const translations = {
     },
     // Hero Section
     hero: {
-      distributor: "🇲🇾 Official Malaysia Distributor",
-      title: "Great Wall Smart Displays",
+      distributor: "🇲🇾 Official Malaysia Distributor Tolbao",
+      title: "HMAY Smart Displays",
       subtitle: "Professional Interactive Flat Panels & Commercial Displays for Modern Workspaces",
       features: {
         display: "4K Ultra HD Display",
@@ -116,7 +116,7 @@ const translations = {
     // Products Section
     products: {
       title: "HMAY Interactive Flat Panel & Accessories",
-      subtitle: "Complete ecosystem of Great Wall commercial display solutions",
+      subtitle: "Complete ecosystem of HMAY commercial display solutions",
       interactive: {
         title: "Interactive Panels",
         size: "55″ / 65″ / 75″ / 86″ / 98″"
@@ -141,11 +141,11 @@ const translations = {
       subtitle: "Complete support ecosystem for your interactive display needs",
       sales: {
         title: "Sales & Distribution",
-        desc: "Official authorized reseller of Great Wall interactive panels and commercial displays in Malaysia."
+        desc: "Official authorized reseller of HMAY interactive panels and commercial displays in Malaysia."
       },
       support: {
         title: "Support & Maintenance", 
-        desc: "Dedicated technical team with specialized training to support all HMAY and Great Wall equipment."
+        desc: "Dedicated technical team with specialized training to support all HMAY equipment."
       },
       warranty: {
         title: "Warranty & Parts",
@@ -166,12 +166,12 @@ const translations = {
       hours: "MON-FRI 09:00 - 18:00",
       whatsappDemo: "WhatsApp Demo Request",
       emailInquiry: "Email Inquiry",
-      location: "Kuala Lumpur, Malaysia • Official Great Wall Technology Distributor"
+      location: "Kuala Lumpur, Malaysia • Official HMAY Technology Distributor"
     },
     // Footer
     footer: {
       company: {
-        desc1: "Official Malaysia distributor of Great Wall interactive display solutions.",
+        desc1: "Official Malaysia distributor of HMAY interactive display solutions.",
         desc2: "Transforming workspaces with cutting-edge technology."
       },
       products: {
@@ -195,7 +195,7 @@ const translations = {
         contact: "Contact Us",
         terms: "Terms & Conditions"
       },
-      copyright: "© 2024 HMAY Interactive Solutions. All rights reserved. | Official Great Wall Technology Distributor in Malaysia"
+      copyright: "© 2024 HMAY Interactive Solutions. All rights reserved. | Official HMAY Technology Distributor in Malaysia"
     }
   },
   zh: {
@@ -210,8 +210,8 @@ const translations = {
     },
     // Hero Section
     hero: {
-      distributor: "🇲🇾 马来西亚官方经销商",
-      title: "长城智能显示屏",
+      distributor: "🇲🇾 马来西亚官方经销商 Tolbao",
+      title: "HMAY智能显示屏",
       subtitle: "专业交互式平板显示器和商用显示设备，为现代工作空间而生",
       features: {
         display: "4K超高清显示",
@@ -275,7 +275,7 @@ const translations = {
     // Products Section
     products: {
       title: "HMAY交互式平板显示器及配件",
-      subtitle: "长城商用显示解决方案完整生态系统",
+      subtitle: "HMAY商用显示解决方案完整生态系统",
       interactive: {
         title: "交互式面板",
         size: "55″ / 65″ / 75″ / 86″ / 98″"
@@ -300,11 +300,11 @@ const translations = {
       subtitle: "交互式显示需求的完整支持生态系统",
       sales: {
         title: "销售与分销",
-        desc: "长城交互式面板和商用显示器在马来西亚的官方授权经销商。"
+        desc: "HMAY交互式面板和商用显示器在马来西亚的官方授权经销商。"
       },
       support: {
         title: "支持与维护",
-        desc: "拥有专业培训的专业技术团队，为所有HMAY和长城设备提供支持。"
+        desc: "拥有专业培训的专业技术团队，为所有HMAY设备提供支持。"
       },
       warranty: {
         title: "保修与配件", 
@@ -325,12 +325,12 @@ const translations = {
       hours: "周一至周五 09:00 - 18:00",
       whatsappDemo: "WhatsApp演示申请",
       emailInquiry: "邮件咨询", 
-      location: "吉隆坡，马来西亚 • 长城科技官方经销商"
+      location: "吉隆坡，马来西亚 • HMAY科技官方经销商"
     },
     // Footer
     footer: {
       company: {
-        desc1: "长城交互式显示解决方案马来西亚官方经销商。",
+        desc1: "HMAY交互式显示解决方案马来西亚官方经销商。",
         desc2: "用尖端技术改变工作空间。"
       },
       products: {
@@ -354,7 +354,7 @@ const translations = {
         contact: "联系我们",
         terms: "条款与条件"
       },
-      copyright: "© 2024 HMAY Interactive Solutions. 版权所有。| 马来西亚长城科技官方经销商"
+      copyright: "© 2024 HMAY Interactive Solutions. 版权所有。| 马来西亚HMAY科技官方经销商"
     }
   }
 }
@@ -425,7 +425,9 @@ const App = () => {
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white ${large ? 'px-8 py-4 text-lg' : 'px-6 py-3'} rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold ${className}`}
     >
-      <MessageCircle size={large ? 24 : 20} />
+      <svg width={large ? 24 : 20} height={large ? 24 : 20} viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+      </svg>
       {children}
     </a>
   )
@@ -490,7 +492,7 @@ const App = () => {
           className="w-full h-auto object-cover"
           style={{ display: 'block' }}
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-start justify-center pt-8 sm:pt-12 lg:pt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <motion.div
               initial="initial"
@@ -510,10 +512,10 @@ const App = () => {
               }`}>
                 ✨ {t.hero.distributor}
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight text-white drop-shadow-2xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight text-gray-900">
                 {t.hero.title}
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 text-white/95 drop-shadow-xl">
+              <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 text-gray-800">
                 {t.hero.subtitle}
               </p>
             </motion.div>
@@ -935,30 +937,60 @@ const App = () => {
                 <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.products.interactive}</li>
                 <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.products.tablet}</li>
                 <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.products.commercial}</li>
-                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.products.wireless}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.products.education}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.products.business}</li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4 text-white">{t.footer.services.title}</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.services.sales}</li>
                 <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.services.installation}</li>
                 <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.services.training}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.services.support}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.services.maintenance}</li>
                 <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.services.warranty}</li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">{t.footer.company_links.title}</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">{t.footer.company.title}</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company_links.about}</li>
-                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company_links.clients}</li>
-                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company_links.contact}</li>
-                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company_links.terms}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company.about}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company.contact}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company.careers}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company.news}</li>
+                <li className="hover:text-gray-300 cursor-pointer transition-colors">{t.footer.company.partners}</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>{t.footer.copyright}</p>
+          <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-4 mb-4 md:mb-0">
+              <img src={HmayLogo} alt="HMAY" className="h-8 w-auto" />
+              <div>
+                <p className="text-white font-semibold">HMAY Interactive Solutions</p>
+                <p className="text-gray-400 text-sm">Official Malaysia Distributor Tolbao</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-gray-400 text-sm">
+              <div className="flex items-center space-x-2">
+                <Phone size={16} />
+                <a href="tel:+60129319468" className="hover:text-white transition-colors">+60 12-931 9468</a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-green-500">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.486"/>
+                </svg>
+                <a href="https://wa.me/60129319468" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin size={16} />
+                <span>{t.contact.location}</span>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-6 pt-6 text-center">
+            <p className="text-gray-400 text-sm">
+              {t.footer.copyright}
+            </p>
           </div>
         </div>
       </footer>

@@ -1,6 +1,6 @@
-# Great Wall Smart Panels Landing Page
+# HMAY Smart Panels Landing Page
 
-A modern, mobile-first React landing page for Great Wall Smart Panels, the premium commercial smart display brand represented by TB Dynamic Sdn Bhd in Malaysia.
+A modern, mobile-first React landing page for HMAY Smart Panels, the premium commercial smart display brand represented by TB Dynamic Sdn Bhd in Malaysia.
 
 ## Features
 
