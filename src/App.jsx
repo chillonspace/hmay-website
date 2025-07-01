@@ -367,39 +367,39 @@ const App = () => {
   // Slider images data - Your uploaded images (no text overlays)
   const sliderImages = [
     {
-      src: '/src/assets/slider-images/hmayslider1.jpeg',
+      src: '/images/slider-images/hmayslider1.jpeg',
       alt: 'HMAY Interactive Panel Solution 1'
     },
     {
-      src: '/src/assets/slider-images/hmayslider2.jpeg',
+      src: '/images/slider-images/hmayslider2.jpeg',
       alt: 'HMAY Interactive Panel Solution 2'
     },
     {
-      src: '/src/assets/slider-images/hmayslider3.jpeg',
+      src: '/images/slider-images/hmayslider3.jpeg',
       alt: 'HMAY Interactive Panel Solution 3'
     },
     {
-      src: '/src/assets/slider-images/hmayslider4.jpeg',
+      src: '/images/slider-images/hmayslider4.jpeg',
       alt: 'HMAY Interactive Panel Solution 4'
     },
     {
-      src: '/src/assets/slider-images/hmayslider5.jpeg',
+      src: '/images/slider-images/hmayslider5.jpeg',
       alt: 'HMAY Interactive Panel Solution 5'
     },
     {
-      src: '/src/assets/slider-images/hmayslider6.jpeg',
+      src: '/images/slider-images/hmayslider6.jpeg',
       alt: 'HMAY Interactive Panel Solution 6'
     },
     {
-      src: '/src/assets/slider-images/hmayslider7.jpeg',
+      src: '/images/slider-images/hmayslider7.jpeg',
       alt: 'HMAY Interactive Panel Solution 7'
     },
     {
-      src: '/src/assets/slider-images/hmayslider8.jpeg',
+      src: '/images/slider-images/hmayslider8.jpeg',
       alt: 'HMAY Interactive Panel Solution 8'
     },
     {
-      src: '/src/assets/slider-images/hmayslider9.jpeg',
+      src: '/images/slider-images/hmayslider9.jpeg',
       alt: 'HMAY Interactive Panel Solution 9'
     }
   ]
