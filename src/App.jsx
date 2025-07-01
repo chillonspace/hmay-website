@@ -156,6 +156,10 @@ const translations = {
         desc: "Professional training programs and hands-on workshops for internal teams and clients."
       }
     },
+    // Slideshow Section
+    slideshow: {
+      title: "HMAY Interactive Flat Panel"
+    },
     // Contact Section
     contact: {
       title: "Book a Live DEMO",
@@ -314,6 +318,10 @@ const translations = {
         title: "培训与发展",
         desc: "为内部团队和客户提供专业培训项目和实践研讨会。"
       }
+    },
+    // Slideshow Section
+    slideshow: {
+      title: "HMAY交互式平板显示器"
     },
     // Contact Section
     contact: {
@@ -564,7 +572,7 @@ const App = () => {
           >
             <motion.div variants={fadeInUp} className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
-                HMAY Interactive Flat Panel
+                {t.slideshow.title}
               </h2>
             </motion.div>
             <motion.div variants={fadeInUp}>
