@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import ImageSlider from './components/ImageSlider.jsx'
+import Blog from './pages/Blog.jsx'
 // Hero background image is now in public folder
 import {
   MessageCircle,
@@ -371,6 +372,11 @@ const App = () => {
   const [language, setLanguage] = useState('en')
   const isDarkMode = false // Always light mode
   const t = translations[language]
+  const path = window.location.pathname
+
+  if (path === '/blog' || path === '/blog/') {
+    return <Blog />
+  }
 
   // Slider images data - Your uploaded images (no text overlays)
   const sliderImages = [
