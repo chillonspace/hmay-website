@@ -770,11 +770,16 @@ const App = () => {
                 <Monitor className={`w-10 h-10 mb-4 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
                 <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>{t.products.interactive.title}</h3>
                 <p className={`text-sm mb-4 ${isDarkMode ? 'text-white/70' : 'text-slate-600'}`}>{t.products.interactive.size}</p>
-                <button className={`text-sm font-medium flex items-center gap-1 transition-colors ${
+                <a
+                  href="/pdfs/HMAY%20Interactive%20Flat%20Panel.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-sm font-medium flex items-center gap-1 transition-colors ${
                   isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
-                }`}>
+                }`}
+                >
                   {t.products.viewSpecs} <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </motion.div>
 
               <motion.div variants={fadeInUp} className={`rounded-xl p-6 transition-all duration-300 shadow-lg backdrop-blur-sm ${
@@ -785,11 +790,16 @@ const App = () => {
                 <Cpu className={`w-10 h-10 mb-4 ${isDarkMode ? 'text-emerald-400' : 'text-emerald-600'}`} />
                 <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>{t.products.tablet.title}</h3>
                 <p className={`text-sm mb-4 ${isDarkMode ? 'text-white/70' : 'text-slate-600'}`}>{t.products.tablet.desc}</p>
-                <button className={`text-sm font-medium flex items-center gap-1 transition-colors ${
+                <a
+                  href="/pdfs/HMAY%20Interactive%20Flat%20Panel.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-sm font-medium flex items-center gap-1 transition-colors ${
                   isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-emerald-600 hover:text-emerald-700'
-                }`}>
+                }`}
+                >
                   {t.products.viewSpecs} <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </motion.div>
 
               <motion.div variants={fadeInUp} className={`rounded-xl p-6 transition-all duration-300 shadow-lg backdrop-blur-sm ${
@@ -800,11 +810,16 @@ const App = () => {
                 <Wrench className={`w-10 h-10 mb-4 ${isDarkMode ? 'text-purple-400' : 'text-purple-600'}`} />
                 <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>{t.products.stands.title}</h3>
                 <p className={`text-sm mb-4 ${isDarkMode ? 'text-white/70' : 'text-slate-600'}`}>{t.products.stands.desc}</p>
-                <button className={`text-sm font-medium flex items-center gap-1 transition-colors ${
+                <a
+                  href="/pdfs/HMAY%20Interactive%20Flat%20Panel.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-sm font-medium flex items-center gap-1 transition-colors ${
                   isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-purple-600 hover:text-purple-700'
-                }`}>
+                }`}
+                >
                   {t.products.viewSpecs} <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </motion.div>
 
               <motion.div variants={fadeInUp} className={`rounded-xl p-6 transition-all duration-300 shadow-lg backdrop-blur-sm ${
@@ -815,11 +830,16 @@ const App = () => {
                 <Share2 className={`w-10 h-10 mb-4 ${isDarkMode ? 'text-orange-400' : 'text-orange-600'}`} />
                 <h3 className={`font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>{t.products.wireless.title}</h3>
                 <p className={`text-sm mb-4 ${isDarkMode ? 'text-white/70' : 'text-slate-600'}`}>{t.products.wireless.desc}</p>
-                <button className={`text-sm font-medium flex items-center gap-1 transition-colors ${
+                <a
+                  href="/pdfs/HMAY%20Interactive%20Flat%20Panel.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-sm font-medium flex items-center gap-1 transition-colors ${
                   isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-orange-600 hover:text-orange-700'
-                }`}>
+                }`}
+                >
                   {t.products.viewSpecs} <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </motion.div>
             </div>
           </motion.div>
