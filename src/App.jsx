@@ -474,10 +474,17 @@ const App = () => {
                 <a href="#products" className="px-3 py-2 text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">{t.nav.products}</a>
                 <a href="#services" className="px-3 py-2 text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">{t.nav.services}</a>
                 <a href="#contact" className="px-3 py-2 text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">{t.nav.contact}</a>
+                <a href="/blog" className="px-3 py-2 text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Blog</a>
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
               <LanguageToggle />
+              <a
+                href="/blog"
+                className="px-3 py-2 text-sm font-medium rounded-lg border border-gray-300 bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              >
+                Blog
+              </a>
               <a
                 href="https://wa.me/60129319468"
                 target="_blank"
